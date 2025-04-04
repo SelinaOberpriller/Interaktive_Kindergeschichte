@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Interaktives Video</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&display=swap');
+    body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+  z-index: 0;
+}
+    video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+    .questionBox {
+  display: none;
+  background-color: rgba(173, 216, 230, 0.7);
+  padding: 40px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999 !important;
+}
+    .question-text {
+      font-family: 'Shadows Into Light', cursive;
+      font-size: 5em;
+      color: #597c4e;
+      text-shadow: 4px 4px 0 rgba(255, 255, 255, 0.3);
+      transform: rotate(-2deg);
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      line-height: 1.1;
+      font-weight: bold;
+      position: relative;
+    }
+    .question-text::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 65%, rgba(89, 124, 78, 0.3) 70%, transparent 75%);
+      background-size: 15px 15px;
+      transform: skewX(-15deg);
+      z-index: -1;
+    }
+    button {
+      background-color: #597c4e;
+      color: white;
+      border: 3px solid #476c3c;
+      padding: 15px 30px;
+      font-size: 2em;
+      margin: 15px;
+      cursor: pointer;
+      border-radius: 10px;
+      font-family: 'Indie Flower', cursive;
+      min-width: 300px;
+      max-width: 90%;
+      transition: all 0.3s ease;
+      transform: rotate(1deg);
+      box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+      word-wrap: break-word;
+    }
+    button:nth-child(2) {
+      transform: rotate(-1deg);
+    }
+    button:hover {
+      background-color: #476c3c;
+      transform: scale(1.05) rotate(2deg);
+    }
+    .buttons-container {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+</style>
+</head>
+<body>
+<div id="introScreen" class="questionBox" style="z-index: 10000; background-color: black; padding: 0;">
+<img src="Titelbild.png" alt="Titelbild" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+</div>
+<video id="videoPlayer" controls>
+<source src="Sz1.mp4" type="video/mp4">
+    Dein Browser unterstützt das Video-Tag nicht.
+</video>
+ 
+  <!-- Frageboxen 1–6 -->
+<div id="questionBox1" class="questionBox">
+<p class="question-text">Soll Fritzi...</p>
+<div class="buttons-container">
+<button onclick="playVideoAndWait('SzB2-B4.mp4', 'questionBox3', 'Sz1.mp4', 'questionBox1')">Alleine gehen</button>
+<button onclick="playVideoAndWait('SzA2-A5.mp4', 'questionBox2', 'Sz1.mp4', 'questionBox1')">Freundinnen und Freunde dazu holen</button>
+</div>
+</div>
+ 
+  <div id="questionBox2" class="questionBox">
+<p class="question-text">Was sollen sie tun?</p>
+<div class="buttons-container">
+<button onclick="playVideoAndWait('SzAA6-AA8.mp4', null, 'SzA2-A5.mp4', 'questionBox2')">Versuchen, das Schloss aufzubrechen</button>
+<button onclick="playVideoAndWait('SzAB6-AB7.mp4', null, 'SzA2-A5.mp4', 'questionBox2')">Gemeinsam an dem Käfig ziehen</button>
+</div>
+</div>
+ 
+  <div id="questionBox3" class="questionBox">
+<p class="question-text">Was soll Fritzi tun?</p>
+<div class="buttons-container">
+<button onclick="playVideoAndWait('SzBA5-A5.mp4', 'questionBox4', 'SzB2-B4.mp4', 'questionBox3')">Freundinnen und Freunde zur Hilfe holen</button>
+<button onclick="playVideoAndWait('SzBB5-BB6.mp4', 'questionBox5', 'SzB2-B4.mp4', 'questionBox3')">Beim Eichhörnchen bleiben</button>
+</div>
+</div>
+ 
+  <div id="questionBox4" class="questionBox">
+<p class="question-text">Was sollen sie tun?</p>
+<div class="buttons-container">
+<button onclick="playVideoAndWait('SzAA6-AA8.mp4', null, 'SzBA5-A5.mp4', 'questionBox4')">Versuchen, das Schloss aufzubrechen</button>
+<button onclick="playVideoAndWait('SzAB6-AB7.mp4', null, 'SzBA5-A5.mp4', 'questionBox4')">Gemeinsam an dem Käfig ziehen</button>
+</div>
+</div>
+ 
+  <div id="questionBox5" class="questionBox">
+<p class="question-text">Was soll Fritzi tun?</p>
+<div class="buttons-container">
+<button onclick="playVideoAndWait('SzBBA7-BBA8.mp4', 'questionBox6', 'SzBB5-BB6.mp4', 'questionBox5')">Um Hilfe rufen</button>
+<button onclick="playVideoAndWait('SzBBB7-BBB10.mp4', null, 'SzBB5-BB6.mp4', 'questionBox5')">Nachschauen gehen</button>
+</div>
+</div>
+ 
+  <div id="questionBox6" class="questionBox">
+<p class="question-text">Was sollen sie tun?</p>
+<div class="buttons-container">
+<button onclick="playVideoAndWait('SzAA6-AA8.mp4', null, 'SzBBA7-BBA8.mp4', 'questionBox6')">Versuchen, das Schloss aufzubrechen</button>
+<button onclick="playVideoAndWait('SzAB6-AB7.mp4', null, 'SzBBA7-BBA8.mp4', 'questionBox6')">Gemeinsam an dem Käfig ziehen</button>
+</div>
+</div>
+ 
+  <!-- Endscreen -->
+<div id="endScreen" class="questionBox">
+<p class="question-text">Super, du hast es geschafft!</p>
+<div class="buttons-container">
+<button onclick="restart()">🔁 Nochmal spielen</button>
+</div>
+</div>
+ 
+  <script>
+    const video = document.getElementById('videoPlayer');
+    const questionBoxes = [
+      questionBox1, questionBox2, questionBox3,
+      questionBox4, questionBox5, questionBox6
+    ];
+    const endScreen = document.getElementById('endScreen');
+ 
+    let previousVideo = null;
+    let previousBoxId = null;
+ 
+    hideAllQuestions();
+ 
+    // Intro anzeigen und dann Video starten
+    const intro = document.getElementById('introScreen');
+    intro.style.display = 'flex';
+    setTimeout(() => {
+      intro.style.display = 'none';
+      video.src = 'Sz1.mp4';
+      video.load();
+      video.play();
+    }, 4000);
+ 
+    video.addEventListener('timeupdate', function () {
+  if (getFilenameFromSrc(video.currentSrc) === 'Sz1.mp4' && video.currentTime >= 23 && video.currentTime < video.duration) {
+    showQuestion(questionBox1);
+    video.removeEventListener('timeupdate', arguments.callee);
+  }
+});
+ 
+video.addEventListener('ended', function () {
+      const currentFilename = getFilenameFromSrc(video.currentSrc);
+ 
+      if (currentFilename === 'Sz1.mp4') showQuestion(questionBox1);
+      else if (currentFilename === 'SzA2-A5.mp4') showQuestion(questionBox2);
+      else if (currentFilename === 'SzB2-B4.mp4') showQuestion(questionBox3);
+      else if (currentFilename === 'SzBA5-A5.mp4') showQuestion(questionBox4);
+      else if (currentFilename === 'SzBB5-BB6.mp4') showQuestion(questionBox5);
+      else if (currentFilename === 'SzBBA7-BBA8.mp4') showQuestion(questionBox6);
+      else if ([
+        'SzAA6-AA8.mp4',
+        'SzAB6-AB7.mp4',
+        'SzBBB7-BBB10.mp4'
+      ].includes(currentFilename)) {
+        showQuestion(endScreen);
+      }
+    });
+ 
+    function getFilenameFromSrc(src) {
+      return src.substring(src.lastIndexOf('/') + 1);
+    }
+ 
+    function showQuestion(box) {
+      hideAllQuestions();
+      box.style.display = 'flex';
+      addBackButton(box, previousVideo, previousBoxId);
+    }
+ 
+    function hideAllQuestions() {
+      [...questionBoxes, endScreen].forEach(box => box.style.display = 'none');
+    }
+ 
+    function playVideoAndWait(filename, nextQuestionBoxId = null, backVideo = null, backBoxId = null) {
+      hideAllQuestions();
+      video.src = filename;
+      video.load();
+      video.play();
+ 
+      previousVideo = backVideo;
+      previousBoxId = backBoxId;
+ 
+      if (nextQuestionBoxId) {
+        const targetBox = document.getElementById(nextQuestionBoxId);
+        video.onended = function () {
+          showQuestion(targetBox);
+        };
+      } else {
+        video.onended = null;
+      }
+    }
+ 
+    function addBackButton(box, videoFile, boxId) {
+      const oldButton = box.querySelector('.back-button');
+      if (oldButton) oldButton.remove();
+      if (!videoFile || !boxId) return;
+ 
+      const btn = document.createElement('button');
+      btn.textContent = '🔙 Zur letzten Entscheidung zurückspringen';
+      btn.classList.add('back-button');
+      btn.onclick = () => goBackTo(videoFile, boxId);
+      box.appendChild(btn);
+    }
+ 
+    function goBackTo(filename, questionBoxId) {
+      hideAllQuestions();
+      video.src = filename;
+      video.load();
+      video.onloadedmetadata = () => {
+        video.currentTime = 0;
+        video.play();
+      };
+      video.onended = () => {
+        const targetBox = document.getElementById(questionBoxId);
+        showQuestion(targetBox);
+      };
+    }
+ 
+    function restart() {
+      hideAllQuestions();
+      video.src = 'Sz1.mp4';
+      video.load();
+      video.onloadedmetadata = () => {
+        video.currentTime = 0;
+        video.play();
+      };
+      video.onended = () => showQuestion(questionBox1);
+    }
+</script>
+</body>
+</html>
