@@ -100,186 +100,141 @@
 </head>
 <body>
 <div id="introScreen" class="questionBox" style="z-index: 10000; background-color: black; padding: 0;">
-<img src="assets/Titelbild.png" alt="Titelbild" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+  <img src="Titelbild.png" alt="Titelbild" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 </div>
 <video id="videoPlayer" controls>
-<source src="assets/Sz1.mp4" type="video/mp4">
+  <source src="assets/Sz1.mp4" type="video/mp4">
+  <!-- <source src="assets/Sz1.ogv" type="video/ogv"> <!-- Optional: falls OGV-Version vorhanden -->
+  <!-- <source src="assets/Sz1.webm" type="video/webm"> <!-- Optional: falls WebM-Version vorhanden -->
 </video>
- 
-  <!-- Frageboxen 1–6 -->
+
+<!-- Frageboxen 1–6 -->
 <div id="questionBox1" class="questionBox">
-<p class="question-text">Soll Fritzi...</p>
-<div class="buttons-container">
-<button onclick="playVideoAndWait('SzB2-B4.mp', 'questionBox3', 'Sz1.mp4', 'questionBox1')">Alleine gehen</button>
-<button onclick="playVideoAndWait('SzA2-A5.mp4', 'questionBox2', 'Sz1.mp4', 'questionBox1')">Freundinnen und Freunde dazu holen</button>
+  <p class="question-text">Soll Fritzi...</p>
+  <div class="buttons-container">
+    <button onclick="playVideoAndWait('assets/SzB2-B4.mp4', 'questionBox3', 'assets/Sz1.mp4', 'questionBox1')">Alleine gehen</button>
+    <button onclick="playVideoAndWait('assets/SzA2-A5.mp4', 'questionBox2', 'assets/Sz1.mp4', 'questionBox1')">Freundinnen und Freunde dazu holen</button>
+  </div>
 </div>
+
+<div id="questionBox2" class="questionBox">
+  <p class="question-text">Was sollen sie tun?</p>
+  <div class="buttons-container">
+    <button onclick="playVideoAndWait('assets/SzAA6-AA8.mp4', null, 'assets/SzA2-A5.mp4', 'questionBox2')">Versuchen, das Schloss aufzubrechen</button>
+    <button onclick="playVideoAndWait('assets/SzAB6-AB7.mp4', null, 'assets/SzA2-A5.mp4', 'questionBox2')">Gemeinsam an dem Käfig ziehen</button>
+  </div>
 </div>
- 
-  <div id="questionBox2" class="questionBox">
-<p class="question-text">Was sollen sie tun?</p>
-<div class="buttons-container">
-<button onclick="playVideoAndWait('SzAA6-AA8.mp4', null, 'SzA2-A5.mp4', 'questionBox2')">Versuchen, das Schloss aufzubrechen</button>
-<button onclick="playVideoAndWait('SzAB6-AB7.mp4', null, 'SzA2-A5.mp4', 'questionBox2')">Gemeinsam an dem Käfig ziehen</button>
+
+<div id="questionBox3" class="questionBox">
+  <p class="question-text">Was soll Fritzi tun?</p>
+  <div class="buttons-container">
+    <button onclick="playVideoAndWait('assets/SzBA5-A5.mp4', 'questionBox4', 'assets/SzB2-B4.mp4', 'questionBox3')">Freundinnen und Freunde zur Hilfe holen</button>
+    <button onclick="playVideoAndWait('assets/SzBB5-BB6.mp4', 'questionBox5', 'assets/SzB2-B4.mp4', 'questionBox3')">Beim Eichhörnchen bleiben</button>
+  </div>
 </div>
+
+<div id="questionBox4" class="questionBox">
+  <p class="question-text">Was sollen sie tun?</p>
+  <div class="buttons-container">
+    <button onclick="playVideoAndWait('assets/SzAA6-AA8.mp4', null, 'assets/SzBA5-A5.mp4', 'questionBox4')">Versuchen, das Schloss aufzubrechen</button>
+    <button onclick="playVideoAndWait('assets/SzAB6-AB7.mp4', null, 'assets/SzBA5-A5.mp4', 'questionBox4')">Gemeinsam an dem Käfig ziehen</button>
+  </div>
 </div>
- 
-  <div id="questionBox3" class="questionBox">
-<p class="question-text">Was soll Fritzi tun?</p>
-<div class="buttons-container">
-<button onclick="playVideoAndWait('SzBA5-A5.mp4', 'questionBox4', 'SzB2-B4.mp4', 'questionBox3')">Freundinnen und Freunde zur Hilfe holen</button>
-<button onclick="playVideoAndWait('SzBB5-BB6.mp4', 'questionBox5', 'SzB2-B4.mp4', 'questionBox3')">Beim Eichhörnchen bleiben</button>
+
+<div id="questionBox5" class="questionBox">
+  <p class="question-text">Was soll Fritzi tun?</p>
+  <div class="buttons-container">
+    <button onclick="playVideoAndWait('assets/SzBBA7-BBA8.mp4', 'questionBox6', 'assets/SzBB5-BB6.mp4', 'questionBox5')">Um Hilfe rufen</button>
+    <button onclick="playVideoAndWait('assets/SzBBB7-BBB10.mp4', null, 'assets/SzBB5-BB6.mp4', 'questionBox5')">Nachschauen gehen</button>
+  </div>
 </div>
+
+<div id="questionBox6" class="questionBox">
+  <p class="question-text">Was sollen sie tun?</p>
+  <div class="buttons-container">
+    <button onclick="playVideoAndWait('assets/SzAA6-AA8.mp4', null, 'assets/SzBBA7-BBA8.mp4', 'questionBox6')">Versuchen, das Schloss aufzubrechen</button>
+    <button onclick="playVideoAndWait('assets/SzAB6-AB7.mp4', null, 'assets/SzBBA7-BBA8.mp4', 'questionBox6')">Gemeinsam an dem Käfig ziehen</button>
+  </div>
 </div>
- 
-  <div id="questionBox4" class="questionBox">
-<p class="question-text">Was sollen sie tun?</p>
-<div class="buttons-container">
-<button onclick="playVideoAndWait('SzAA6-AA8.mp4', null, 'SzBA5-A5.mp4', 'questionBox4')">Versuchen, das Schloss aufzubrechen</button>
-<button onclick="playVideoAndWait('SzAB6-AB7.mp4', null, 'SzBA5-A5.mp4', 'questionBox4')">Gemeinsam an dem Käfig ziehen</button>
-</div>
-</div>
- 
-  <div id="questionBox5" class="questionBox">
-<p class="question-text">Was soll Fritzi tun?</p>
-<div class="buttons-container">
-<button onclick="playVideoAndWait('SzBBA7-BBA8.mp4', 'questionBox6', 'SzBB5-BB6.mp4', 'questionBox5')">Um Hilfe rufen</button>
-<button onclick="playVideoAndWait('SzBBB7-BBB10.mp4', null, 'SzBB5-BB6.mp4', 'questionBox5')">Nachschauen gehen</button>
-</div>
-</div>
- 
-  <div id="questionBox6" class="questionBox">
-<p class="question-text">Was sollen sie tun?</p>
-<div class="buttons-container">
-<button onclick="playVideoAndWait('SzAA6-AA8.mp4', null, 'SzBBA7-BBA8.mp4', 'questionBox6')">Versuchen, das Schloss aufzubrechen</button>
-<button onclick="playVideoAndWait('SzAB6-AB7.mp4', null, 'SzBBA7-BBA8.mp4', 'questionBox6')">Gemeinsam an dem Käfig ziehen</button>
-</div>
-</div>
- 
-  <!-- Endscreen -->
+
+<!-- Endscreen -->
 <div id="endScreen" class="questionBox">
-<p class="question-text">Super, du hast es geschafft!</p>
-<div class="buttons-container">
-<button onclick="restart()">🔁 Nochmal spielen</button>
+  <p class="question-text">Super, du hast es geschafft!</p>
+  <div class="buttons-container">
+    <button onclick="restart()">🔁 Nochmal spielen</button>
+  </div>
 </div>
-</div>
- 
-  <script>
-    const video = document.getElementById('videoPlayer');
-    const questionBoxes = [
-      questionBox1, questionBox2, questionBox3,
-      questionBox4, questionBox5, questionBox6
-    ];
-    const endScreen = document.getElementById('endScreen');
- 
-    let previousVideo = null;
-    let previousBoxId = null;
- 
-    hideAllQuestions();
- 
-    // Intro anzeigen und dann Video starten
-    const intro = document.getElementById('introScreen');
-    intro.style.display = 'flex';
-    setTimeout(() => {
-      intro.style.display = 'none';
-      video.src = 'Sz1.mp4';
-      video.load();
-      video.play();
-    }, 4000);
- 
-    video.addEventListener('timeupdate', function () {
-  if (getFilenameFromSrc(video.currentSrc) === 'Sz1.mp4' && video.currentTime >= 23 && video.currentTime < video.duration) {
-    showQuestion(questionBox1);
-    video.removeEventListener('timeupdate', arguments.callee);
+
+<script>
+  const video = document.getElementById('videoPlayer');
+  const questionBoxes = [
+    questionBox1, questionBox2, questionBox3,
+    questionBox4, questionBox5, questionBox6
+  ];
+  const endScreen = document.getElementById('endScreen');
+
+  let previousVideo = null;
+  let previousBoxId = null;
+
+  hideAllQuestions();
+
+  // Intro anzeigen und dann Video starten
+  const intro = document.getElementById('introScreen');
+  intro.style.display = 'flex';
+  setTimeout(() => {
+    intro.style.display = 'none';
+    video.src = 'assets/Sz1.mp4';
+    video.load();
+    video.play();
+  }, 4000);
+
+  video.addEventListener('timeupdate', function () {
+    if (getFilenameFromSrc(video.currentSrc) === 'Sz1.mp4' && video.currentTime >= 23 && video.currentTime < video.duration) {
+      showQuestion(questionBox1);
+      video.removeEventListener('timeupdate', arguments.callee);
+    }
+  });
+
+  video.addEventListener('ended', function () {
+    const currentFilename = getFilenameFromSrc(video.currentSrc);
+
+    if (currentFilename === 'Sz1.mp4') showQuestion(questionBox1);
+    else if (currentFilename === 'SzA2-A5.mp4') showQuestion(questionBox2);
+    else if (currentFilename === 'SzB2-B4.mp4') showQuestion(questionBox3);
+    else if (currentFilename === 'SzBA5-A5.mp4') showQuestion(questionBox4);
+    else if (currentFilename === 'SzBB5-BB6.mp4') showQuestion(questionBox5);
+    else if (currentFilename === 'SzBBA7-BBA8.mp4') showQuestion(questionBox6);
+    else if ([
+      'SzAA6-AA8.mp4',
+      'SzAB6-AB7.mp4',
+      'SzBBB7-BBB10.mp4'
+    ].includes(currentFilename)) {
+      showQuestion(endScreen);
+    }
+  });
+
+  function getFilenameFromSrc(src) {
+    return src.substring(src.lastIndexOf('/') + 1);
   }
-});
- 
-video.addEventListener('ended', function () {
-      const currentFilename = getFilenameFromSrc(video.currentSrc);
- 
-      if (currentFilename === 'Sz1.mp4') showQuestion(questionBox1);
-      else if (currentFilename === 'SzA2-A5.mp4') showQuestion(questionBox2);
-      else if (currentFilename === 'SzB2-B4.mp4') showQuestion(questionBox3);
-      else if (currentFilename === 'SzBA5-A5.mp4') showQuestion(questionBox4);
-      else if (currentFilename === 'SzBB5-BB6.mp4') showQuestion(questionBox5);
-      else if (currentFilename === 'SzBBA7-BBA8.mp4') showQuestion(questionBox6);
-      else if ([
-        'SzAA6-AA8.mp4',
-        'SzAB6-AB7.mp4',
-        'SzBBB7-BBB10.mp4'
-      ].includes(currentFilename)) {
-        showQuestion(endScreen);
-      }
-    });
- 
-    function getFilenameFromSrc(src) {
-      return src.substring(src.lastIndexOf('/') + 1);
-    }
- 
-    function showQuestion(box) {
-      hideAllQuestions();
-      box.style.display = 'flex';
-      addBackButton(box, previousVideo, previousBoxId);
-    }
- 
-    function hideAllQuestions() {
-      [...questionBoxes, endScreen].forEach(box => box.style.display = 'none');
-    }
- 
-    function playVideoAndWait(filename, nextQuestionBoxId = null, backVideo = null, backBoxId = null) {
-      hideAllQuestions();
-      video.src = filename;
-      video.load();
-      video.play();
- 
-      previousVideo = backVideo;
-      previousBoxId = backBoxId;
- 
-      if (nextQuestionBoxId) {
-        const targetBox = document.getElementById(nextQuestionBoxId);
-        video.onended = function () {
-          showQuestion(targetBox);
-        };
-      } else {
-        video.onended = null;
-      }
-    }
- 
-    function addBackButton(box, videoFile, boxId) {
-      const oldButton = box.querySelector('.back-button');
-      if (oldButton) oldButton.remove();
-      if (!videoFile || !boxId) return;
- 
-      const btn = document.createElement('button');
-      btn.textContent = '🔙 Zur letzten Entscheidung zurückspringen';
-      btn.classList.add('back-button');
-      btn.onclick = () => goBackTo(videoFile, boxId);
-      box.appendChild(btn);
-    }
- 
-    function goBackTo(filename, questionBoxId) {
-      hideAllQuestions();
-      video.src = filename;
-      video.load();
-      video.onloadedmetadata = () => {
-        video.currentTime = 0;
-        video.play();
-      };
-      video.onended = () => {
-        const targetBox = document.getElementById(questionBoxId);
-        showQuestion(targetBox);
-      };
-    }
- 
-    function restart() {
-      hideAllQuestions();
-      video.src = 'Sz1.mp4';
-      video.load();
-      video.onloadedmetadata = () => {
-        video.currentTime = 0;
-        video.play();
-      };
-      video.onended = () => showQuestion(questionBox1);
-    }
-</script>
-</body>
-</html>
+
+  function showQuestion(box) {
+    hideAllQuestions();
+    box.style.display = 'flex';
+    addBackButton(box, previousVideo, previousBoxId);
+  }
+
+  function hideAllQuestions() {
+    [...questionBoxes, endScreen].forEach(box => box.style.display = 'none');
+  }
+
+  function playVideoAndWait(filename, nextQuestionBoxId = null, backVideo = null, backBoxId = null) {
+    hideAllQuestions();
+    video.src = filename;
+    video.load();
+    video.play();
+
+    previousVideo = backVideo;
+    previousBoxId = backBoxId;
+
+    if (nextQuestionBoxId) {
+      const targetBox = document.getElementBy
